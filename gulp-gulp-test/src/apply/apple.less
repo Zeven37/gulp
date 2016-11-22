@@ -1,0 +1,147 @@
+//variables
+
+@apply-background-Color: #fafafa;       //免费申请页面 背景颜色
+
+@submit-form-label-fontColor: #333;     //表单 label字体颜色
+@apply-yellow-color: #fdd;           //免费申请页面 黄色
+@gray-color: #999;
+@apply-shadowColor: #e5e5e5;            //免费申请页面 边框颜色
+@apply-button-hover: #fee137;           //申请按钮hover颜色
+//免费申请
+.apply-container {
+  position: relative;
+  margin: auto;
+  top: 97px;
+  width: 970px;
+  height: 490px;
+  border-radius: 4px;
+  box-shadow: 0 0 5px @apply-shadowColor;
+  background-color: @apply-background-Color;
+}
+
+//免费申请表单
+.apply-submit-form {
+  margin-left: 475px;
+  position: absolute;
+  padding: 60px 70px 75px 70px;
+  top: -35px;
+  z-index: 2;
+  width: 315px;
+  background-color: #fff;
+  border: 1px solid @apply-shadowColor;
+  box-shadow: 0 0 15px @apply-shadowColor;
+}
+
+//表单标题
+.submit-form-title {
+  display: inline-block;
+  margin-top: 0;
+  margin-bottom: 40px;
+  border-bottom: 1px solid @apply-yellow-color;
+  padding-bottom: 15px;
+  font-size: 25px;
+  color: @submit-form-label-fontColor;
+}
+
+//表单行
+.submit-form-row {
+  margin-bottom: 15px;
+
+  label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 12px;
+    color: @submit-form-label-fontColor;
+  }
+
+  //input
+  .apply-formList {
+    box-sizing:border-box;
+    padding-left: 12px;
+    border: 1px solid @gray-color;
+    border-radius: 3px;
+    width: 100%;
+    height: 37px;
+    line-height: 37px;
+    font-size: 15px;
+    font-family: "Microsoft YaHei";
+    outline: none;
+  }
+
+  .apply-formList:focus {
+    border: 1px solid @apply-yellow-color;
+    box-shadow: 0 0 4px @apply-yellow-color;
+  }
+  // 下拉框
+  select {
+    appearance:none;//清楚默认格式
+    -moz-appearance:none;
+    -webkit-appearance:none;
+    background: url("apply-arrows-down.png") no-repeat scroll right center transparent;
+    padding-right: 38px;
+  }
+}
+
+//验证码
+.apply-check {
+  overflow: hidden;
+  margin-bottom: 30px;
+  display: inline-table;
+
+  .apply-formList {
+    float: left;
+    width: 155px;
+  }
+
+  img {
+    float: left;
+    margin: 0 5px 0 5px;
+  }
+
+  a {
+    float: left;
+    padding-top: 22px;
+    display: inline-block;
+    font-size: 12px;
+    color: @submit-form-label-fontColor;
+    text-decoration: none;
+  }
+}
+
+//免费申请提交按钮
+.apply-submit-button {
+  width: 100%;
+  height: 42px;
+  line-height: 42px;
+  font-size: 15px;
+  font-family: "Microsoft YaHei";
+  color: @submit-form-label-fontColor;
+  background-color: @apply-yellow-color;
+  border-style: none;
+  border-radius: 3px;
+}
+
+.apply-submit-button:hover {
+  background-color: @apply-button-hover;
+}
+
+//背景图片
+.apply-background {
+  position: absolute;
+  width: 475px;
+  height: 490px;
+
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+  }
+}
+
+//解决不兼容问题
+.no-boxshadow .apply-container, .no-boxshadow .apply-container .submit-form{
+  border: 1px solid #e5e5e5;
+}

@@ -1,0 +1,260 @@
+//variables
+
+@topNav-height: 70px;              //头部导航总高度
+@topNav-backgroundColor: #fbfbfb;  //头部导航背景颜色
+@topNav-containerWidth: 1000px;    //头部导航内容宽度
+@boxShadow-color: #eee;            //公共页面阴影颜色
+@topNav-fontColor: #666;           //头部导航字体颜色
+@common-fontSize: 14px;            //头部导航字体大小
+@common-yellowColor: #fdda00;      //头部导航 黄色 颜色
+@common-line-color: #e5e5e5;       //公共页面边框颜色
+@footer-fontColor: #333;           //页脚链接字体颜色
+@footer-backgroundColor: #fcfcfc;  //页脚背景颜色
+@button-hover-backgroundColor: #f7f5eb;  //头部导航右边按钮hover 背景颜色
+@copy-color: #999;                 //版权信息字体颜色
+@copy-backgroundColor: #f0f0f0;    //版权背景颜色
+@common-icon-color: #ccc;          //字体图标颜色
+@common-footer-high: 420px;        //页尾高度
+
+html,
+body{
+  height: 100%;
+  font-family: "Microsoft YaHei";
+}
+
+//大包含块 除了页脚以外的部分
+.big-all-container {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin: 0 auto -@common-footer-high;
+}
+
+//*********顶部导航*********
+.common-header {
+  position: relative;
+  width: 100%;
+  height: @topNav-height;
+  line-height: @topNav-height;
+  background-color: @topNav-backgroundColor;
+  box-shadow: 0 2px 10px @boxShadow-color;
+  z-index: 999;
+
+  //顶部导航内容部分
+  .common-container {
+    position: relative;
+    margin: auto;
+    width: @topNav-containerWidth;
+    height: 100%;
+  }
+
+  //加班狗Logo
+  .jiabangou-iconLogo {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    width: 153px;
+    height: 58px;
+    background-image: url("topNav-jiabangou-logo.png");
+  }
+
+  //导航列表
+  .common-topnav-list {
+    float: right;
+    margin: 0 20px 0 0;
+    padding: 0;
+    list-style: none;
+    line-height: @topNav-height;
+
+    li {
+      float: left;
+      height: 100%;
+      color: @topNav-fontColor;
+    }
+
+    li:hover,
+    .active {
+      background-color: @common-yellowColor;
+    }
+
+    a {
+      float: left;
+      padding-right: 20px;
+      padding-left: 20px ;
+      text-decoration: none;
+      font-size: @common-fontSize;
+      color:  @topNav-fontColor;;
+    }
+  }
+
+  //导航部分 最右边两个按钮
+  .topnav-button-container{
+    float: right;
+  }
+
+  .topnav-button {
+    display:inline-block;
+    margin-left: 10px;
+    padding: 0 15px;
+    height: 30px;
+    line-height: 30px;
+    text-decoration: none;
+    font-size: @common-fontSize;
+    color: @topNav-fontColor;
+    text-align: center;
+    border-radius: 4px;
+    border: 1px solid  #e0e4e6;
+  }
+
+  .topnav-button:hover{
+    border: 1px solid @common-yellowColor;
+    background-color: @button-hover-backgroundColor
+  }
+
+}
+
+// ********页脚导航********
+.common-footer{
+  //position: absolute;
+  //bottom: 0;
+  width: 100%;
+  //height: 420px;
+  border-top: 1px solid @common-line-color;
+  background-color: @footer-backgroundColor;
+
+  //页脚导航内容
+  .common-container {
+    margin: auto;
+    padding-top: 70px;
+    padding-bottom: 48px;
+    width: @topNav-containerWidth;
+
+  }
+  .common-container:after{
+    clear: both;
+  }
+
+  //页脚加班狗 logo
+  .footer-jiabangou-logo {
+    float: left;
+    margin-right: 60px;
+    width: 130px;
+    height: 46px;
+    background-image: url("footer-jiabangou-logo.png");
+  }
+
+  //底部导航链接
+  .common-footer-list {
+    float: left;
+    width: 170px;
+    list-style: none;
+
+    // 标题
+    dt {
+      margin-bottom: 22px;
+      padding-left: 10px;
+      border-left: 2px solid #ccc;
+      font-size: @common-fontSize;
+      color: @footer-fontColor;
+    }
+
+    dd {
+      margin: 0 0 16px 10px;
+      white-space: nowrap;
+      font-size: 12px;
+      color: @topNav-fontColor;
+    }
+
+    a {
+      font-size: 12px;
+      color: @topNav-fontColor;
+      text-decoration: none;
+    }
+    a:hover{
+      color: @common-yellowColor;
+    }
+  }
+
+  //客户中心
+  .footer-serviceCustomer {
+    float: left;
+    box-sizing: border-box;
+    margin-top: -20px;
+    padding-left: 50px;
+    padding-top: 20px;
+    width: 300px;
+    //height: 280px;
+    border-left: 2px solid @common-line-color;
+  }
+
+  //客服电话
+  .service-tel {
+    display: block;
+    padding-top: 5px;
+    font-size: 20px;
+    color: @footer-fontColor;
+    letter-spacing: 3px;
+  }
+
+  //客服工单
+  .service-work-order{
+    display: inline-block;
+    margin-left: 10px;
+    padding-left: 0;
+    border-bottom: 1px solid @common-line-color;
+  }
+
+  //微博链接图标等
+  .common-link-icon {
+    float: left;
+    border-top: 1px solid @common-line-color;
+    padding-top: 15px;
+    width: 100%;
+  }
+
+  //字体图标
+  .iconfont {
+    float: left;
+    padding-right: 18px;
+    color: @common-icon-color;
+    font-size: 25px;
+  }
+
+  .iconfont:hover {
+    color: @common-yellowColor;
+  }
+
+  //版权信息
+  .common-copyright {
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+    font-size: 12px;
+    text-align: center;
+    color: @copy-color;
+    background-color: @copy-backgroundColor;
+    border-top: 1px solid @common-line-color;
+
+  }
+
+  //清楚浮动
+  .clear {
+    clear: both;
+  }
+}
+
+// *******推页脚下去******
+.common-footer,
+.push-footer {
+  height: @common-footer-high;
+  clear:both;
+}
+
+//ie下阴影问题
+.no-boxshadow .big-all-container .common-header{
+  display: block;
+}
+
+
